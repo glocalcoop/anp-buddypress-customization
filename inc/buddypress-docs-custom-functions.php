@@ -32,7 +32,7 @@ if( !function_exists( 'anp_rename_bp_docs' ) ) {
             'label'        => __( 'Community Documents', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'labels'       => $post_type_labels,
             'public'       => true,
-            'show_ui'      => BP_Docs::show_cpt_ui(),
+            'show_ui'      => (new BP_Docs)->show_cpt_ui(),
             'hierarchical' => true,
             'supports'     => array( 'title', 'editor', 'revisions', 'excerpt', 'comments', 'author' ),
             'query_var'    => true,
