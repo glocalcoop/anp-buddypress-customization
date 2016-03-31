@@ -16,7 +16,7 @@ if( !function_exists( 'anp_rename_invite_anyone' ) ) {
     function anp_rename_invite_anyone( $post_type_args ) {
 
         $post_type_labels = array(
-            'name'          => _x( 'Community Invitations', 'post type general name', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
+            'name'          => _x( 'Invitations', 'post type general name', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'singular_name'     => _x( 'Invitation', 'post type singular name', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'add_new'       => _x( 'Add New', 'add new', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'add_new_item'      => __( 'Add New Invitation', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
@@ -30,7 +30,7 @@ if( !function_exists( 'anp_rename_invite_anyone' ) ) {
         );
 
         $post_type_args = array(
-            'label'     => __( 'Community Invitations', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
+            'label'     => __( 'Invitations', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'labels'    => $post_type_labels,
             'public'    => false,
             '_builtin'  => false,
