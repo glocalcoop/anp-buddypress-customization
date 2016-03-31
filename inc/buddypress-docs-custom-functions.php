@@ -15,7 +15,7 @@ if( !function_exists( 'anp_rename_bp_docs' ) ) {
     function anp_rename_bp_docs( $array ) {
 
         $post_type_labels = array(
-            'name'           => _x( 'Community Documents', 'post type general name', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
+            'name'           => _x( 'Documents', 'post type general name', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'singular_name'      => _x( 'Documents', 'post type singular name', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'add_new'        => _x( 'New Document', 'add new', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'add_new_item'       => __( 'Add New Document', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
@@ -29,7 +29,7 @@ if( !function_exists( 'anp_rename_bp_docs' ) ) {
         );
 
         $array = array(
-            'label'        => __( 'Community Documents', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
+            'label'        => __( 'Documents', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'labels'       => $post_type_labels,
             'public'       => true,
             'show_ui'      => (new BP_Docs)->show_cpt_ui(),
