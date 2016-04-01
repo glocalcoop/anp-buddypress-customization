@@ -10,9 +10,12 @@
  * @package   ANP_BuddyPress_Customization
  */
 
+/**
+ * Change Labels and Icon
+ */
 if( !function_exists( 'anp_rename_bp_docs' ) ) {
 
-    function anp_rename_bp_docs( $array ) {
+    function anp_rename_bp_docs( $defaults ) {
 
         $post_type_labels = array(
             'name'           => _x( 'Documents', 'post type general name', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
@@ -28,23 +31,15 @@ if( !function_exists( 'anp_rename_bp_docs' ) ) {
             'parent_item_colon'  => ''
         );
 
-        $array = array(
+        $args = array(
             'label'        => __( 'Documents', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'labels'       => $post_type_labels,
-            'public'       => true,
-            'show_ui'      => (new BP_Docs)->show_cpt_ui(),
-            'hierarchical' => true,
-            'supports'     => array( 'title', 'editor', 'revisions', 'excerpt', 'comments', 'author' ),
-            'query_var'    => true,
-            'has_archive'  => true,
-            'rewrite'      => array(
-                'slug'       => bp_docs_get_docs_slug(),
-                'with_front' => false
-            ),
             'menu_icon'     => 'dashicons-media-text',
         );
 
-        return $array;
+        $args = wp_parse_args( $args, $defaults );
+
+        return $args;
 
     }
 
@@ -52,7 +47,6 @@ add_filter( 'bp_docs_post_type_args', 'anp_rename_bp_docs' );
 
 }
 
-//apply_filters( 'bp_docs_post_type_name', 'bp_doc' );
 
 if( !function_exists( 'anp_dequeue_docs_styles' ) ) {
 
