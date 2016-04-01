@@ -16,27 +16,28 @@
  */
 if( !function_exists( 'anp_rename_forums' ) ) {
 
-    function anp_rename_forums( $array ) {
+    function anp_rename_forums( $defaults ) {
 
-        $array = array(
+        $args = array(
             'name'               => __( 'Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'menu_name'          => __( 'Discussions', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'singular_name'      => __( 'Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'all_items'          => __( 'All Discussions', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'add_new'            => __( 'New Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'add_new_item'       => __( 'Create New Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'edit'               => __( 'Edit', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'edit_item'          => __( 'Edit Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'new_item'           => __( 'New Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'view'               => __( 'View Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'view_item'          => __( 'View Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'search_items'       => __( 'Search Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
+            'search_items'       => __( 'Search Discussions', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'not_found'          => __( 'No discussion found', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'not_found_in_trash' => __( 'No discussions found in Trash', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
             'parent_item_colon'  => __( 'Parent Discussion:', ANP_BP_CUSTOM_PLUGIN_NAMESPACE )
         );
 
-        return $array;
+        $args = wp_parse_args( $args, $defaults );
+
+        return $args;
 
     }
 
@@ -70,29 +71,15 @@ add_filter( 'gettext', 'anp_change_forums_text', 20 );
  */
 if( !function_exists( 'anp_hide_topic_admin_menu' ) ) {
 
-    function anp_hide_topic_admin_menu( $array ) {
+    function anp_hide_topic_admin_menu( $defaults ) {
 
-        $array = array(
-            'labels'              => bbp_get_topic_post_type_labels(),
-            'rewrite'             => bbp_get_topic_post_type_rewrite(),
-            'supports'            => bbp_get_topic_post_type_supports(),
-            'description'         => __( 'Topics', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'capabilities'        => bbp_get_topic_caps(),
-            'capability_type'     => array( 'topic', 'topics' ),
-            'menu_position'       => 555555,
-            'has_archive'         => ( 'discussion' === bbp_show_on_root() ) ? bbp_get_topic_archive_slug() : false,
-            'exclude_from_search' => true,
-            'show_in_nav_menus'   => false,
-            'public'              => true,
-            'show_ui'             => current_user_can( 'bbp_topics_admin' ),
-            'can_export'          => true,
-            'hierarchical'        => false,
-            'query_var'           => true,
-            'menu_icon'           => '',
+        $args = array(
             'show_in_menu'        => false
         );
 
-        return $array;
+        $args = wp_parse_args( $args, $defaults );
+
+        return $args;
 
     }
 
@@ -106,29 +93,15 @@ add_filter( 'bbp_register_topic_post_type', 'anp_hide_topic_admin_menu' );
  */
 if( !function_exists( 'anp_hide_reply_admin_menu' ) ) {
 
-    function anp_hide_reply_admin_menu( $array ) {
+    function anp_hide_reply_admin_menu( $defaults ) {
 
-        $array = array(
-            'labels'              => bbp_get_reply_post_type_labels(),
-            'rewrite'             => bbp_get_reply_post_type_rewrite(),
-            'supports'            => bbp_get_reply_post_type_supports(),
-            'description'         => __( 'Topic Replies', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'capabilities'        => bbp_get_reply_caps(),
-            'capability_type'     => array( 'reply', 'replies' ),
-            'menu_position'       => 555555,
-            'exclude_from_search' => true,
-            'has_archive'         => false,
-            'show_in_nav_menus'   => false,
-            'public'              => true,
-            'show_ui'             => current_user_can( 'bbp_replies_admin' ),
-            'can_export'          => true,
-            'hierarchical'        => false,
-            'query_var'           => true,
-            'menu_icon'           => '',
-            'show_in_menu'        => false
+        $args = array(
+            'show_in_menu'        => false,
         );
 
-        return $array;
+        $args = wp_parse_args( $args, $defaults );
+
+        return $args;
 
     }
 
@@ -167,7 +140,7 @@ if ( ! function_exists( 'anp_add_subitems_to_forums' ) ) {
             __( 'All Replies', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ), 
             __( 'All Replies', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ), 
             'manage_options', 
-            'post-new.php?post_type=reply'
+            'edit.php?post_type=reply'
         ); 
 
         add_submenu_page(
@@ -183,6 +156,25 @@ if ( ! function_exists( 'anp_add_subitems_to_forums' ) ) {
     add_action( 'admin_menu', 'anp_add_subitems_to_forums' ); 
 
 }
+
+/**
+ * Set Root Slug
+ * Set the root slug
+ */
+update_option( '_bbp_root_slug', 'discussions' );
+
+/**
+ * Set Root Slug
+ * Set the root slug
+ */
+update_option( '_bbp_show_on_root', 'discussions' );
+
+
+/**
+ * Set Forum Slug
+ * Set the forum slug
+ */
+update_option( '_bbp_forum_slug', 'discussion' );
 
 
 ?>
