@@ -34,9 +34,9 @@ add_filter( 'bp_groupblog_subnav_item_slug', function( $slug ) {
 if ( ! function_exists( 'anp_change_blogs_text' ) ) {
 
     function anp_change_blogs_text( $translated_text ) {
-        if ( $translated_text == 'Blog' ) {
+        if ( $translated_text == 'Blog' || $translated_text == 'Group Blog' ) {
             $translated_text = 'Website';
-        } elseif( $translated_text == 'Blogs' ) {
+        } elseif ( $translated_text == 'Blogs' ) {
             $translated_text = 'Websites';
         }
         return $translated_text;
