@@ -19,20 +19,20 @@ if( !function_exists( 'anp_rename_forums' ) ) {
     function anp_rename_forums( $defaults ) {
 
         $args = array(
-            'name'               => __( 'Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'menu_name'          => __( 'Discussions', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'singular_name'      => __( 'Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'all_items'          => __( 'All Discussions', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'add_new'            => __( 'New Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'add_new_item'       => __( 'Create New Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'edit_item'          => __( 'Edit Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'new_item'           => __( 'New Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'view'               => __( 'View Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'view_item'          => __( 'View Discussion', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'search_items'       => __( 'Search Discussions', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'not_found'          => __( 'No discussion found', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'not_found_in_trash' => __( 'No discussions found in Trash', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'parent_item_colon'  => __( 'Parent Discussion:', ANP_BP_CUSTOM_PLUGIN_NAMESPACE )
+            'name'               => __( 'Discussion', 'anp-buddypress-customization' ),
+            'menu_name'          => __( 'Discussions', 'anp-buddypress-customization' ),
+            'singular_name'      => __( 'Discussion', 'anp-buddypress-customization' ),
+            'all_items'          => __( 'All Discussions', 'anp-buddypress-customization' ),
+            'add_new'            => __( 'New Discussion', 'anp-buddypress-customization' ),
+            'add_new_item'       => __( 'Create New Discussion', 'anp-buddypress-customization' ),
+            'edit_item'          => __( 'Edit Discussion', 'anp-buddypress-customization' ),
+            'new_item'           => __( 'New Discussion', 'anp-buddypress-customization' ),
+            'view'               => __( 'View Discussion', 'anp-buddypress-customization' ),
+            'view_item'          => __( 'View Discussion', 'anp-buddypress-customization' ),
+            'search_items'       => __( 'Search Discussions', 'anp-buddypress-customization' ),
+            'not_found'          => __( 'No discussion found', 'anp-buddypress-customization' ),
+            'not_found_in_trash' => __( 'No discussions found in Trash', 'anp-buddypress-customization' ),
+            'parent_item_colon'  => __( 'Parent Discussion:', 'anp-buddypress-customization' )
         );
 
         $args = wp_parse_args( $args, $defaults );
@@ -121,32 +121,32 @@ if ( ! function_exists( 'anp_add_subitems_to_forums' ) ) {
 
         add_submenu_page(
             'edit.php?post_type=forum', 
-            __( 'All Topics', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ), 
-            __( 'All Topics', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ), 
+            __( 'All Topics', 'anp-buddypress-customization' ), 
+            __( 'All Topics', 'anp-buddypress-customization' ), 
             'manage_options', 
             'edit.php?post_type=topic'
         ); 
 
         add_submenu_page(
             'edit.php?post_type=forum', 
-            __( 'New Topic', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ), 
-            __( 'New Topic', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ), 
+            __( 'New Topic', 'anp-buddypress-customization' ), 
+            __( 'New Topic', 'anp-buddypress-customization' ), 
             'manage_options', 
             'post-new.php?post_type=topic'
         ); 
 
         add_submenu_page(
             'edit.php?post_type=forum', 
-            __( 'All Replies', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ), 
-            __( 'All Replies', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ), 
+            __( 'All Replies', 'anp-buddypress-customization' ), 
+            __( 'All Replies', 'anp-buddypress-customization' ), 
             'manage_options', 
             'edit.php?post_type=reply'
         ); 
 
         add_submenu_page(
             'edit.php?post_type=forum', 
-            __( 'New Reply', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ), 
-            __( 'New Reply', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ), 
+            __( 'New Reply', 'anp-buddypress-customization' ), 
+            __( 'New Reply', 'anp-buddypress-customization' ), 
             'manage_options', 
             'post-new.php?post_type=reply'
         ); 

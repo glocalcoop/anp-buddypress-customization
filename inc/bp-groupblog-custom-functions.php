@@ -15,7 +15,7 @@
  * Replace Blog with Website in BuddyPress nav tabs
  */
 add_filter( 'bp_groupblog_subnav_item_name', function( $name ) { 
-    return $name = __( 'Website', ANP_BP_CUSTOM_PLUGIN_NAMESPACE );
+    return $name = __( 'Website', 'anp-buddypress-customization' );
 } );
 
 /**
@@ -23,7 +23,7 @@ add_filter( 'bp_groupblog_subnav_item_name', function( $name ) {
  * Replace blog with site slug
  */
 add_filter( 'bp_groupblog_subnav_item_slug', function( $slug ) { 
-    return $slug = __( 'site', ANP_BP_CUSTOM_PLUGIN_NAMESPACE );
+    return $slug = __( 'site', 'anp-buddypress-customization' );
 } );
 
 /**

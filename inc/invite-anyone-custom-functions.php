@@ -16,25 +16,25 @@ if( !function_exists( 'anp_rename_invite_anyone' ) ) {
     function anp_rename_invite_anyone( $post_type_args ) {
 
         $post_type_labels = array(
-            'name'          => _x( 'Invitations', 'post type general name', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'singular_name'     => _x( 'Invitation', 'post type singular name', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'add_new'       => _x( 'Add New', 'add new', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'add_new_item'      => __( 'Add New Invitation', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'edit_item'         => __( 'Edit Invitation', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'new_item'      => __( 'New Invitation', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'view_item'         => __( 'View Invitation', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'search_items'      => __( 'Search Invitation', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'not_found'         =>  __( 'No Invitations found', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'not_found_in_trash'    => __( 'No Invitations found in Trash', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
+            'name'          => _x( 'Invitations', 'post type general name', 'anp-buddypress-customization' ),
+            'singular_name'     => _x( 'Invitation', 'post type singular name', 'anp-buddypress-customization' ),
+            'add_new'       => _x( 'Add New', 'add new', 'anp-buddypress-customization' ),
+            'add_new_item'      => __( 'Add New Invitation', 'anp-buddypress-customization' ),
+            'edit_item'         => __( 'Edit Invitation', 'anp-buddypress-customization' ),
+            'new_item'      => __( 'New Invitation', 'anp-buddypress-customization' ),
+            'view_item'         => __( 'View Invitation', 'anp-buddypress-customization' ),
+            'search_items'      => __( 'Search Invitation', 'anp-buddypress-customization' ),
+            'not_found'         =>  __( 'No Invitations found', 'anp-buddypress-customization' ),
+            'not_found_in_trash'    => __( 'No Invitations found in Trash', 'anp-buddypress-customization' ),
             'parent_item_colon'     => ''
         );
 
         $post_type_args = array(
-            'label'     => __( 'Invitations', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
+            'label'     => __( 'Invitations', 'anp-buddypress-customization' ),
             'labels'    => $post_type_labels,
             'public'    => false,
             '_builtin'  => false,
-            'show_ui'   => (new Invite_Anyone_Schema)->show_dashboard_ui(),
+            'show_ui'   => true,
             'hierarchical'  => false,
             'menu_icon' => 'dashicons-email-alt',
             'supports'  => array( 'title', 'editor', 'custom-fields', 'author' )

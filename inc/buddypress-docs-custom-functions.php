@@ -18,21 +18,21 @@ if( !function_exists( 'anp_rename_bp_docs' ) ) {
     function anp_rename_bp_docs( $defaults ) {
 
         $post_type_labels = array(
-            'name'           => _x( 'Documents', 'post type general name', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'singular_name'      => _x( 'Documents', 'post type singular name', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'add_new'        => _x( 'New Document', 'add new', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'add_new_item'       => __( 'Add New Document', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'edit_item'          => __( 'Edit Document', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'new_item'       => __( 'New Document', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'view_item'          => __( 'View Document', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'search_items'       => __( 'Search  Documents', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'not_found'          =>  __( 'No  Documents found', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
-            'not_found_in_trash' => __( 'No  Documents found in Trash', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
+            'name'           => _x( 'Documents', 'post type general name', 'anp-buddypress-customization' ),
+            'singular_name'      => _x( 'Documents', 'post type singular name', 'anp-buddypress-customization' ),
+            'add_new'        => _x( 'New Document', 'add new', 'anp-buddypress-customization' ),
+            'add_new_item'       => __( 'Add New Document', 'anp-buddypress-customization' ),
+            'edit_item'          => __( 'Edit Document', 'anp-buddypress-customization' ),
+            'new_item'       => __( 'New Document', 'anp-buddypress-customization' ),
+            'view_item'          => __( 'View Document', 'anp-buddypress-customization' ),
+            'search_items'       => __( 'Search  Documents', 'anp-buddypress-customization' ),
+            'not_found'          =>  __( 'No  Documents found', 'anp-buddypress-customization' ),
+            'not_found_in_trash' => __( 'No  Documents found in Trash', 'anp-buddypress-customization' ),
             'parent_item_colon'  => ''
         );
 
         $args = array(
-            'label'        => __( 'Documents', ANP_BP_CUSTOM_PLUGIN_NAMESPACE ),
+            'label'        => __( 'Documents', 'anp-buddypress-customization' ),
             'labels'       => $post_type_labels,
             'menu_icon'     => 'dashicons-media-text',
         );

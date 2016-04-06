@@ -38,10 +38,6 @@ if ( !defined( 'ANP_BP_CUSTOM_PLUGIN_URL' ) ) {
     define( 'ANP_BP_CUSTOM_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 }
 
-if ( !defined( 'ANP_BP_CUSTOM_PLUGIN_NAMESPACE' ) ) {
-    define( 'ANP_BP_CUSTOM_PLUGIN_NAMESPACE', 'anp-bp-custom' );
-}
-
 
 /* ---------------------------------- *
  * Required Files
@@ -52,6 +48,7 @@ include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/buddypress-docs-custom-functions.
 include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/bp-groupblog-custom-functions.php' );
 include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/invite-anyone-custom-functions.php' );
 include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/group-subscriptions-custom-functions.php' );
+include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/friendship-custom-functions.php' );
 
 
 ?>
