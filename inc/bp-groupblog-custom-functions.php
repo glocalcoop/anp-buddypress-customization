@@ -34,11 +34,21 @@ add_filter( 'bp_groupblog_subnav_item_slug', function( $slug ) {
 if ( ! function_exists( 'anp_change_blogs_text' ) ) {
 
     function anp_change_blogs_text( $translated_text ) {
-        if ( $translated_text == 'Blog' || $translated_text == 'Group Blog' ) {
+        if ( 'Blog' == $translated_text || 'Group Blog' == $translated_text ) :
             $translated_text = 'Website';
-        } elseif ( $translated_text == 'Blogs' ) {
+        elseif ( 'Blogs' == $translated_text ) :
             $translated_text = 'Websites';
-        }
+        elseif ( 'Blog Title:' ==  $translated_text ) :
+            $translated_text = 'Website Title';
+        elseif ( 'Blog Address:' ==  $translated_text ) :
+            $translated_text = 'Website Address';
+        elseif ( 'Enable group blog' ==  $translated_text ) :
+            $translated_text = 'Enable group website';
+        elseif ( 'Enable member blog posting' ==  $translated_text ) :
+            $translated_text = 'Enable member website posting';
+        elseif ( 'Enable blog posting to allow adding of group members to the blog with the roles set below.' ==  $translated_text ) :
+            $translated_text = 'Enable website posting to allow adding of group members to the website with the roles set below. ';
+        endif;
         return $translated_text;
     }
 
