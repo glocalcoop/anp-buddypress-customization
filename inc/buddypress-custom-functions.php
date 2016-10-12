@@ -18,7 +18,7 @@ function anp_buddypress_widgets_init() {
 
      register_sidebar( array(
          'name'          => __( 'Community Widgets', 'anp-bp-custom' ),
-         'id'            => 'sidebar-buddypress',
+         'id'            => 'buddypress',
          'description'   => __( 'Widget area for your Community pages. Note: It must be added to your theme in order for the widgets to appear.', 'anp-bp-custom' ),
          'before_widget' => '<section id="%1$s" class="widget %2$s">',
          'after_widget'  => '</section>',
