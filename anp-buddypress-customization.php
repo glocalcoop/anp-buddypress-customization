@@ -6,7 +6,7 @@
  * @author    Pea, Glocal
  * @license   GPL-2.0+
  * @link      http://glocal.coop
- * @since     1.0.1
+ * @since     1.0.2
  * @package   ANP_BuddyPress_Customization
  */
 
@@ -15,7 +15,7 @@ Plugin Name: Activist Network BuddyPress Customization
 Description: Customization for BuddyPress and associated plugins.
 Author: Pea, Glocal
 Author URI: http://glocal.coop
-Version: 1.0.1
+Version: 1.0.2
 License: GPLv3
 Text Domain: anp-bp-custom
 */
@@ -37,9 +37,16 @@ if ( !defined( 'ANP_BP_CUSTOM_PLUGIN_URL' ) ) {
 
 /**
  * Required Files
+ * Only load code that needs BuddyPress to run once BP is loaded and initialized.
+ * @uses bp_include
+ * @link https://codex.buddypress.org/plugindev/checking-buddypress-is-active/
  */
-include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/buddypress-docs-custom-functions.php' );
-include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/bp-groupblog-custom-functions.php' );
-include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/invite-anyone-custom-functions.php' );
-include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/group-subscriptions-custom-functions.php' );
-include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/friendship-custom-functions.php' );
+function anp_buddypress_customization_init() {
+    include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/buddypress-custom-functions.php' );
+    include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/buddypress-docs-custom-functions.php' );
+    include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/bp-groupblog-custom-functions.php' );
+    include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/invite-anyone-custom-functions.php' );
+    include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/group-subscriptions-custom-functions.php' );
+    include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/friendship-custom-functions.php' );
+}
+add_action( 'bp_include', 'anp_buddypress_customization_init' );
