@@ -47,6 +47,8 @@ add_action( 'widgets_init', 'anp_buddypress_widgets_init' );
  */
 function anp_buddypress_class( $classes ) {
     if ( is_buddypress()  && is_active_sidebar( 'buddypress' ) ) {
+        var_dump( $classes );
+
         if ( isset( $classes['no-sidebar'] ) ) {
             unset( $classes['no-sidebar'] );
         }
@@ -56,4 +58,4 @@ function anp_buddypress_class( $classes ) {
     }
     return $classes;
 }
-add_filter( 'body_class', 'anp_buddypress_class', 50, 2 );
+add_filter( 'body_class', 'anp_buddypress_class' );
