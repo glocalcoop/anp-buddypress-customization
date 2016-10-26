@@ -11,8 +11,11 @@
  */
 
 /**
- * Register our sidebars and widgetized areas.
+ * Register BuddyPress Sidebar
  *
+ * @since 1.0.2
+ *
+ * @uses register_sidebar()
  */
 function anp_buddypress_widgets_init() {
 
@@ -30,4 +33,27 @@ function anp_buddypress_widgets_init() {
 }
 add_action( 'widgets_init', 'anp_buddypress_widgets_init' );
 
-?>
+/**
+ * Modify Body Class
+ * Modify body classes if on BuddyPress page and BuddyPress sidebar is active
+ *
+ * @since 1.0.2.1
+ *
+ * @uses is_buddypress()
+ * @uses is_active_sidebar()
+ *
+ * @param array $classes
+ * @return array $classes
+ */
+function anp_buddypress_class( $classes ) {
+    if ( is_buddypress()  && is_active_sidebar( 'buddypress' ) ) {
+        if ( isset( $classes['no-sidebar'] ) ) {
+            unset( $classes['no-sidebar'] );
+        }
+        if( isset( $classes['no-active-sidebar'] ) ) {
+            unset( $classes['no-active-sidebar'] );
+        }
+    }
+    return $classes;
+}
+add_filter( 'body_class', 'anp_buddypress_class' );

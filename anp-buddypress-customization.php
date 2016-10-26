@@ -6,7 +6,7 @@
  * @author    Pea, Glocal
  * @license   GPL-2.0+
  * @link      http://glocal.coop
- * @since     1.0.2
+ * @since     1.0.2.1
  * @package   ANP_BuddyPress_Customization
  */
 
