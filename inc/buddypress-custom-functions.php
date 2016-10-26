@@ -56,4 +56,4 @@ function anp_buddypress_class( $classes ) {
     }
     return $classes;
 }
-add_filter( 'body_class', 'anp_buddypress_class' );
+add_filter( 'body_class', 'anp_buddypress_class', 50, 2 );
