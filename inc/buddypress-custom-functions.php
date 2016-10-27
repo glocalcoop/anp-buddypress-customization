@@ -36,7 +36,6 @@ add_action( 'widgets_init', 'anp_buddypress_widgets_init' );
 /**
  * Modify Body Class
  * Modify body classes if on BuddyPress page and BuddyPress sidebar is active
- * Added to `wp_enqueue_scripts` action because needs to fire after theme adds classes
  *
  * @since 1.0.2.1
  *
@@ -47,18 +46,14 @@ add_action( 'widgets_init', 'anp_buddypress_widgets_init' );
  * @return array $classes
  */
 function anp_buddypress_class( $classes ) {
-    add_filter( 'body_class', function( $classes ) {
-        if ( is_buddypress()  && is_active_sidebar( 'buddypress' ) ) {
-            var_dump( $classes );
-
-            if ( isset( $classes['no-sidebar'] ) ) {
-                unset( $classes['no-sidebar'] );
-            }
-            if( isset( $classes['no-active-sidebar'] ) ) {
-                unset( $classes['no-active-sidebar'] );
-            }
+    if ( is_buddypress()  && is_active_sidebar( 'buddypress' ) ) {
+        if ( isset( $classes['no-sidebar'] ) ) {
+            unset( $classes['no-sidebar'] );
         }
-        return $classes;
-    } );
+        if( isset( $classes['no-active-sidebar'] ) ) {
+            unset( $classes['no-active-sidebar'] );
+        }
+    }
+    return $classes;
 }
-add_action( 'wp_print_scripts', 'anp_buddypress_class' );
+add_filter( 'body_class', 'anp_buddypress_class' );
