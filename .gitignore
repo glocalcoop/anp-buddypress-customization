@@ -6,3 +6,8 @@
 *.tar
 *.gz
 .brackets.json
+.editorconfig
+.svnignore
+node_modules/
+bin
+vendor
