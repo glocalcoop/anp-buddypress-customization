@@ -6,7 +6,7 @@
  * @author    Pea, Glocal
  * @license   GPL-2.0+
  * @link      http://glocal.coop
- * @since     1.0.2.1
+ * @since     1.0.3
  * @package   ANP_BuddyPress_Customization
  */
 
@@ -42,6 +42,11 @@ if ( !defined( 'ANP_BP_CUSTOM_PLUGIN_URL' ) ) {
  * @link https://codex.buddypress.org/plugindev/checking-buddypress-is-active/
  */
 function anp_buddypress_customization_init() {
+    include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/classes/class-gamajo-template-loader.php' );
+    include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/classes/class-anpbc-template-loader.php' );
+    include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/admin/admin-settings.php' );
+    include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/public/buddypress-group-home.php' );
+
     include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/buddypress-custom-functions.php' );
     include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/buddypress-docs-custom-functions.php' );
     include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/bp-groupblog-custom-functions.php' );

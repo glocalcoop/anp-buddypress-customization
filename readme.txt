@@ -3,7 +3,7 @@ Contributors: misfist
 Tags: buddypress, community, social
 Requires at least: 3.0.1
 Tested up to: 4.5
-Version: 1.0.2.1
+Version: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,9 @@ e.g.
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+= 1.0.3 November 18, 2016 =
+* Feature #1651 Add Group Overview Page that replaces the home tab
 
 = 1.0.2.1 October 26, 2016 =
 [Task #1619] Add function to remove `no-sidebar` and `no-active-sidebar` class when page is BuddyPress and BuddyPress sidebar has at least one widget
