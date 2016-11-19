@@ -1,3 +1,10 @@
+<?php
+global $bp;
+$group_id = groups_get_groupmeta( $bp->groups->current_group->id );
+$forum = maybe_unserialize( $group_id['forum_id'][0] );
+$forum_id = $forum[0];
+?>
+
 <div class="anp-buddypress-home">
     <div class="buddypress-home-modules">
         <?php if ( bp_is_active( 'xprofile' ) ) : ?>
@@ -22,19 +29,31 @@
         <?php if ( bp_is_active( 'members' ) ) : ?>
             <div class="buddypress-module members">Members</div>
         <?php endif; ?>
+
+        <div class="buddypress-module">
+            <?php the_widget( 'BPEO_Group_Widget', array(
+                'group_id' => $bp->groups->current_group->id,
+                'title' => __( 'Upcoming Events', 'anp-bp-custom' ) ) ); ?>
+        </div>
+        <div class="buddypress-module">
+            <?php the_widget( 'BBP_Topics_Widget', array(
+                'parent_forum' => $forum_id,
+                'order_by' => 'freshness',
+                'title' => __( 'Recent Topics', 'anp-bp-custom' ) ) ); ?>
+        </div>
+        <div class="buddypress-module">
+            <?php the_widget( 'BBP_Replies_Widget', array(
+                'title' => __( 'Recent Replies', 'anp-bp-custom' ),
+                'parent_forum' => $forum_id
+            ) ); ?>
+        </div>
     </div>
+
     <?php if( is_active_sidebar( 'anp-buddypress-home' ) ) : ?>
         <div class="buddypress-home-widgets">
             <?php dynamic_sidebar( 'anp-buddypress-home' ); ?>
         </div>
     <?php endif; ?>
-
-    <?php global $bp; ?>
-
-    <?php $group_meta = groups_get_groupmeta( $bp->groups->current_group->id ); ?>
-    <?php $forum = maybe_unserialize( $group_meta['forum_id'][0] ); ?>
-    <?php $forum_id = $forum[0]; ?>
-    <?php  ?>
 
     <?php the_widget( 'BBP_Topics_Widget', array(
         'parent_forum' => $forum_id,
@@ -50,14 +69,4 @@
         'group_id' => $bp->groups->current_group->id,
         'title' => __( 'Group Events', 'anp-bp-custom' ) ) ); ?>
 
-
-    <?php global $wp_widget_factory; ?>
-
-    <?php
-    echo '<pre>';
-    var_dump( $bp );
-    //var_dump( $wp_widget_factory->widgets );
-    // var_dump( $bp->groups->current_group->id );
-    echo '</pre>';
-    ?>
 </div>

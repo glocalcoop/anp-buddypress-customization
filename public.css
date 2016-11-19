@@ -1,0 +1,42 @@
+/**
+ * Import scss partials here.
+ */
+/**
+ * Color variables
+ */
+/* Social Media - http://www.paulund.co.uk/social-media-colours */
+/**
+ * Elements
+ */
+/**
+ * Lists
+ */
+/**
+ * Utilities
+ */
+@media screen and (min-width: 544px) {
+  .anp-buddypress-home .buddypress-home-modules:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .anp-buddypress-home .buddypress-module {
+    float: left;
+    width: 50%;
+    border: 1px solid #e0e0e0;
+    padding: 1em; }
+  .anp-buddypress-home .intro {
+    width: 100%; } }
+
+@supports (display: flex) {
+  @media screen and (min-width: 544px) {
+    .anp-buddypress-home .buddypress-home-modules {
+      display: flex;
+      flex-wrap: wrap; }
+    .anp-buddypress-home .buddypress-module {
+      flex: 1 1 50%; }
+    .anp-buddypress-home .intro {
+      flex-basis: 100%; } } }
+
+/**
+ * Import scss partials here.
+ */

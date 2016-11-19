@@ -16,7 +16,7 @@ class ANP_Buddypress_Group_Home_Page {
 	 * Option Value
 	 * Value of the option field
 	 *
-	 * @since 0.1.0
+	 * @since 1.0.3
 	 * @var string $option_value
 	 */
 	public $option_value = '';
@@ -25,7 +25,7 @@ class ANP_Buddypress_Group_Home_Page {
      * Option Name
      * Name of the option field
      *
-     * @since 0.1.0
+     * @since 1.0.3
      * @var string $option_name
      */
     public $option_name = 'bp-disable-group-home';
@@ -34,7 +34,7 @@ class ANP_Buddypress_Group_Home_Page {
      * Slug
      * Slug of the page
      *
-     * @since 0.1.0
+     * @since 1.0.3
      * @var string $slug
      */
     public $slug = 'home';
@@ -42,7 +42,7 @@ class ANP_Buddypress_Group_Home_Page {
     /**
      * Constructor
      *
-     * @since 0.1.0
+     * @since 1.0.3
      */
 	function __construct() {
         $this->option_value = bp_get_option( $this->option_name );
@@ -51,6 +51,8 @@ class ANP_Buddypress_Group_Home_Page {
         if( $this->option_value ) {
             $this->register_template_stack();
         }
+
+        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
         add_shortcode( 'widget', array( $this, 'widget_shortcode' ) );
 	}
@@ -62,7 +64,7 @@ class ANP_Buddypress_Group_Home_Page {
      *
      * @uses apply_filters()
      *
-     * @since 0.1.0
+     * @since 1.0.3
      *
      * @link https://codex.buddypress.org/plugindev/upgrading-older-plugins-that-bundle-custom-templates-for-bp-1-7/
      *
@@ -97,40 +99,22 @@ class ANP_Buddypress_Group_Home_Page {
      *
      * @link https://codex.buddypress.org/developer/filters-reference/bp_get_template_part/
      *
-     * @since 0.1.0
+     * @since 1.0.3
      * @return string
      */
     function get_template_part( $template ) {
         return $anp_bp_customization_template_loader->get_template_part( $template );
     }
 
-    public function widget_shortcode( $type, $atts = null ) {
-
-        global $bp;
-        $group_id = $bp->groups->current_group->id;
-
-        // Configure defaults and extract the attributes into variables
-        extract( shortcode_atts(
-        	array(
-        		'title'       => '',
-                'group_id'    => $group_id,
-                'type'        => $type
-        	),
-        	$atts
-        ));
-
-        $args = array(
-        	'before_widget' => '<div class="group-' . $group_id . ' ">TEST',
-        	'after_widget'  => '</div>',
-        	'before_title'  => '<div class="widget-title">',
-        	'after_title'   => '</div>',
-        );
-
-        ob_start();
-        the_widget( $type, $atts, $args );
-        $output = ob_get_clean();
-
-        return $output;
+    /**
+     * Enqueue Scripts
+     *
+     * @since 1.0.3
+     */
+    public function enqueue_scripts() {
+        if( !is_admin() ) {
+            wp_enqueue_style( 'anp-custom-home', ANP_BP_CUSTOM_PLUGIN_URL . 'dist/styles/public.min.css', false );
+        }
     }
 
 }

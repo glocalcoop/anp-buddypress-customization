@@ -1,0 +1,38 @@
+.anp-buddypress-home {}
+
+
+@include breakpoint(sm) {
+  .anp-buddypress-home {
+    .buddypress-home-modules {
+      @include clearfix;
+    }
+    .buddypress-module {
+      float:      left;
+      width:      50%;
+      border:     1px solid $color__gray-light;
+      padding:    1em;
+    }
+    .intro {
+      width:      100%;
+    }
+  }
+}
+
+@supports ( display: flex ) {
+  @include breakpoint(sm) {
+
+    .anp-buddypress-home {
+      .buddypress-home-modules {
+        display:    flex;
+        flex-wrap:  wrap;
+      }
+      .buddypress-module {
+        flex:       1 1 50%;
+      }
+      .intro {
+        flex-basis: 100%;
+      }
+    }
+
+  }
+}
