@@ -55,18 +55,4 @@ $forum_id = $forum[0];
         </div>
     <?php endif; ?>
 
-    <?php the_widget( 'BBP_Topics_Widget', array(
-        'parent_forum' => $forum_id,
-        'order_by' => 'freshness',
-        'title' => __( 'Group Topics', 'anp-bp-custom' ) ) ); ?>
-
-    <?php the_widget( 'BBP_Replies_Widget', array(
-        'title' => __( 'Group Replies', 'anp-bp-custom' ),
-        'parent_forum' => $forum_id
-    ) ); ?>
-
-    <?php the_widget( 'BPEO_Group_Widget', array(
-        'group_id' => $bp->groups->current_group->id,
-        'title' => __( 'Group Events', 'anp-bp-custom' ) ) ); ?>
-
 </div>
