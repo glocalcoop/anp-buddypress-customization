@@ -10,7 +10,7 @@
   line-height: 1.5;
 
   ul,
-  #recent-members ul {
+  ul#recent-members {
     @include no-bullets;
 
     li{
