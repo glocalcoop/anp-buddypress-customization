@@ -49,7 +49,8 @@
     list-style: none; }
     .buddypress-module ul li,
     .buddypress-module ul#recent-members li {
-      margin-bottom: 1em; }
+      margin-bottom: 1em;
+      margin-left: 0; }
     .buddypress-module ul p,
     .buddypress-module ul#recent-members p {
       margin-bottom: 0; }
