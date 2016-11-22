@@ -89,5 +89,6 @@
     padding-left: .125em; }
   .buddypress-module .post-date {
     color: #9e9e9e; }
-  .buddypress-module .avatar {
-    border-radius: 50%; }
+
+.buddypress .avatar {
+  border-radius: 50%; }
