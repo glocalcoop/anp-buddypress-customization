@@ -22,6 +22,18 @@
 
   }
 
+  #recent-members {
+    ul {
+      @include no-bullets;
+    }
+  }
+
+  &.content-entry {
+    ul {
+      @include no-bullets;
+    }
+  }
+
   h2:before {
     font-family: $font__icons;
     margin-right: .25em;
