@@ -7,6 +7,20 @@
 .buddypress-module {
 
   border-bottom: 1px solid $color__gray-light;
+  line-height: 1.5;
+
+  ul {
+    @include no-bullets;
+
+    li{
+      margin-bottom: 1em;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+  }
 
   h2:before {
     font-family: $font__icons;
@@ -58,5 +72,22 @@
     h2:before {
       content: "\f307";
     }
+    .avatar-150 {
+      height: 50px;
+      width: auto;
+    }
+  }
+
+  img.avatar-20 {
+    height: 15px;
+    width: auto;
+    padding-right: .125em;
+    padding-left: .125em;
+  }
+  .post-date {
+    color: $color__gray;
+  }
+  .avatar {
+    border-radius: 50%;
   }
 }

@@ -40,7 +40,16 @@
  * Import scss partials here.
  */
 .buddypress-module {
-  border-bottom: 1px solid #e0e0e0; }
+  border-bottom: 1px solid #e0e0e0;
+  line-height: 1.5; }
+  .buddypress-module ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .buddypress-module ul li {
+      margin-bottom: 1em; }
+    .buddypress-module ul p {
+      margin-bottom: 0; }
   .buddypress-module h2:before {
     font-family: "Dashicons";
     margin-right: .25em; }
@@ -62,3 +71,15 @@
     content: "\f491"; }
   .buddypress-module.members h2:before {
     content: "\f307"; }
+  .buddypress-module.members .avatar-150 {
+    height: 50px;
+    width: auto; }
+  .buddypress-module img.avatar-20 {
+    height: 15px;
+    width: auto;
+    padding-right: .125em;
+    padding-left: .125em; }
+  .buddypress-module .post-date {
+    color: #9e9e9e; }
+  .buddypress-module .avatar {
+    border-radius: 50%; }
