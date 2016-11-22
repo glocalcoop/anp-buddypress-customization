@@ -3,3 +3,60 @@
         .widget-title {}
     }
 }
+
+.buddypress-module {
+
+  border-bottom: 1px solid $color__gray-light;
+
+  h2:before {
+    font-family: $font__icons;
+    margin-right: .25em;
+  }
+  &.xprofile {
+    h2:before {
+      content: "\f155";
+    }
+  }
+  &.activity {
+    h2:before {
+      content: "\f204";
+    }
+  }
+  &.forums {
+    &.search {
+      h2:before {
+        content: "\f179";
+      }
+    }
+    &.replies {
+      h2:before {
+        content: "\f205 ";
+      }
+    }
+    &.topics {
+      h2:before {
+        content: "\f130";
+      }
+    }
+  }
+  &.blogs {
+    h2:before {
+      content: "\f488";
+    }
+  }
+  &.events {
+    h2:before {
+      content: "\f508";
+    }
+  }
+  &.docs {
+    h2:before {
+      content: "\f491";
+    }
+  }
+  &.members {
+    h2:before {
+      content: "\f307";
+    }
+  }
+}

@@ -28,7 +28,7 @@ class ANP_Buddypress_Group_Home_Page {
      * @since 1.0.3
      * @var string $option_name
      */
-    public $option_name = 'bp-disable-group-home';
+    public $option_name = 'bp-enable-group-home';
 
     /**
      * Slug
@@ -114,6 +114,7 @@ class ANP_Buddypress_Group_Home_Page {
     public function enqueue_scripts() {
         if( !is_admin() ) {
             wp_enqueue_style( 'anp-custom-home', ANP_BP_CUSTOM_PLUGIN_URL . 'dist/styles/public.min.css', false );
+            wp_enqueue_style( 'dashicons' );
         }
     }
 

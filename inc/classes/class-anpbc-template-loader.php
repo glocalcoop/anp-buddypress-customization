@@ -54,4 +54,3 @@ class ANP_BuddyPress_Customization_Template_Loader extends Gamajo_Template_Loade
  * @usage `$anp_bp_customization_template_loader->get_template_part( 'home' )`
  * @var ANP_BuddyPress_Customization_Template_Loader
  */
-$anp_bp_customization_template_loader = new ANP_BuddyPress_Customization_Template_Loader();

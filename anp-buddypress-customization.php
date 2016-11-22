@@ -46,6 +46,7 @@ function anp_buddypress_customization_init() {
     include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/classes/class-anpbc-template-loader.php' );
     include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/admin/admin-settings.php' );
     include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/public/buddypress-group-home.php' );
+    include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/public/template-tags.php' );
 
     include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/buddypress-custom-functions.php' );
     include_once( ANP_BP_CUSTOM_PLUGIN_DIR . '/inc/buddypress-docs-custom-functions.php' );

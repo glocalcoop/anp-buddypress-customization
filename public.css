@@ -22,7 +22,6 @@
   .anp-buddypress-home .buddypress-module {
     float: left;
     width: 50%;
-    border: 1px solid #e0e0e0;
     padding: 1em; }
   .anp-buddypress-home .intro {
     width: 100%; } }
@@ -40,3 +39,26 @@
 /**
  * Import scss partials here.
  */
+.buddypress-module {
+  border-bottom: 1px solid #e0e0e0; }
+  .buddypress-module h2:before {
+    font-family: "Dashicons";
+    margin-right: .25em; }
+  .buddypress-module.xprofile h2:before {
+    content: "\f155"; }
+  .buddypress-module.activity h2:before {
+    content: "\f204"; }
+  .buddypress-module.forums.search h2:before {
+    content: "\f179"; }
+  .buddypress-module.forums.replies h2:before {
+    content: "\f205 "; }
+  .buddypress-module.forums.topics h2:before {
+    content: "\f130"; }
+  .buddypress-module.blogs h2:before {
+    content: "\f488"; }
+  .buddypress-module.events h2:before {
+    content: "\f508"; }
+  .buddypress-module.docs h2:before {
+    content: "\f491"; }
+  .buddypress-module.members h2:before {
+    content: "\f307"; }

@@ -37,7 +37,7 @@ class ANP_Buddypress_Group_Home_Options_Page {
      * @since       1.0.3
      * @var string $option_name
      */
-    public $option_name = 'bp-disable-group-home';
+    public $option_name = 'bp-enable-group-home';
 
     /**
      * Settings Page
@@ -106,8 +106,8 @@ class ANP_Buddypress_Group_Home_Options_Page {
             'name' => __( 'BuddyPress Group Home Widgets', 'buddypress-custom-group-home' ),
             'id' => 'anp-buddypress-home',
             'description' => __( 'Widgets in this area will be shown on group home pages.', 'buddypress-custom-group-home' ),
-            'before_widget' => '<li id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</li>',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
             'before_title'  => '<h2 class="widgettitle">',
             'after_title'   => '</h2>',
         ) );
@@ -122,7 +122,7 @@ class ANP_Buddypress_Group_Home_Options_Page {
      */
     public function add_group_setting() {
         add_settings_field(
-            'bp-disable-group-home',
+            $this->option_name,
             __( 'Group Home', 'buddypress-custom-group-home' ),
             array( $this, 'settings_field_callback' ),
             'buddypress',
@@ -131,7 +131,7 @@ class ANP_Buddypress_Group_Home_Options_Page {
 
         register_setting(
             'buddypress',
-            'bp-disable-group-home',
+            $this->option_name,
             'intval'
         );
     }
@@ -144,8 +144,8 @@ class ANP_Buddypress_Group_Home_Options_Page {
      */
     public function settings_field_callback() {
         ?>
-        <input id="bp-disable-group-home" name="bp-disable-group-home" type="checkbox" value="1" <?php checked( $this->option_value ); ?> />
-        <label for="bp-disable-group-types"><?php _e( 'Enable custom group home', 'buddypress-custom-group-home' ); ?></label>
+        <input id="<?php echo $this->option_name; ?>" name="<?php echo $this->option_name; ?>" type="checkbox" value="1" <?php checked( $this->option_value ); ?> />
+        <label for="<?php echo $this->option_name; ?>"><?php _e( 'Enable custom group home', 'buddypress-custom-group-home' ); ?></label>
         <?php
     }
 
