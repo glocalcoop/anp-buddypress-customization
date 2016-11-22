@@ -76,39 +76,50 @@ $blog_id = ( array_key_exists( 'groupblog_blog_id', $group_meta ) ) ? (int) $gro
         <?php endif; ?>
 
         <h1>Components Not Returning as Active</h1>
-        <div class="buddypress-module blogs">
-            <!-- <pre>bp_is_active( 'blogs' )</pre> -->
-            <h2 class="widgettitle"><?php _e( 'Recent Posts', 'anp-bp-custom' ); ?></h2>
-            <?php bp_group_home_recent_posts( $group_id, 3 ); ?>
-        </div>
+        <?php if( !bp_is_active( 'blogs' ) ) : ?>
+            <div class="buddypress-module blogs">
+                <!-- <pre>bp_is_active( 'blogs' )</pre> -->
+                <h2 class="widgettitle"><?php _e( 'Recent Posts', 'anp-bp-custom' ); ?></h2>
+                <?php bp_group_home_recent_posts( $group_id, 3 ); ?>
+            </div>
+        <?php endif; ?>
 
-        <div class="buddypress-module events">
-            <!-- <pre>bp_is_active( 'bpeo' )</pre> -->
-            <h2 class="widgettitle"><?php _e( 'Upcoming Events', 'anp-bp-custom' ); ?></h2>
-            <?php bp_group_home_upcoming_events( $group_id );  ?>
-        </div>
+        <?php if( !bp_is_active( 'bpeo' ) ) : ?>
+            <div class="buddypress-module events">
+                <!-- <pre>bp_is_active( 'bpeo' )</pre> -->
+                <h2 class="widgettitle"><?php _e( 'Upcoming Events', 'anp-bp-custom' ); ?></h2>
+                <?php bp_group_home_upcoming_events( $group_id );  ?>
+            </div>
+        <?php endif; ?>
 
-        <div class="buddypress-module forums search">
-            <!-- <pre>bp_is_active( 'forums' )</pre> -->
-            <?php the_widget( 'BBP_Search_Widget', array(
-                'group_id' => $group_id,
-                'title' => __( 'Search Discussions', 'anp-bp-custom' ) ) ); ?>
-        </div>
+        <?php if( !bp_is_active( 'forums' ) ) : ?>
+            <div class="buddypress-module forums search">
+                <!-- <pre>bp_is_active( 'forums' )</pre> -->
+                <?php the_widget( 'BBP_Search_Widget', array(
+                    'group_id' => $group_id,
+                    'title' => __( 'Search Discussions', 'anp-bp-custom' ) ) ); ?>
+            </div>
+        <?php endif; ?>
 
-        <div class="buddypress-module forums topics">
-            <!-- <pre>bp_is_active( 'forums' )</pre> -->
-            <?php the_widget( 'BBP_Topics_Widget', array(
-                'parent_forum' => $forum_id,
-                'order_by' => 'freshness',
-                'title' => __( 'Recent Topics', 'anp-bp-custom' ) ) ); ?>
-        </div>
-        <div class="buddypress-module forums replies">
-            <!-- <pre>bp_is_active( 'forums' )</pre> -->
-            <?php the_widget( 'BBP_Replies_Widget', array(
-                'title' => __( 'Recent Replies', 'anp-bp-custom' ),
-                'parent_forum' => $forum_id
-            ) ); ?>
-        </div>
+        <?php if( !bp_is_active( 'forums' ) ) : ?>
+            <div class="buddypress-module forums topics">
+                <!-- <pre>bp_is_active( 'forums' )</pre> -->
+                <?php the_widget( 'BBP_Topics_Widget', array(
+                    'parent_forum' => $forum_id,
+                    'order_by' => 'freshness',
+                    'title' => __( 'Recent Topics', 'anp-bp-custom' ) ) ); ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if( !bp_is_active( 'forums' ) ) : ?>
+            <div class="buddypress-module forums replies">
+                <!-- <pre>bp_is_active( 'forums' )</pre> -->
+                <?php the_widget( 'BBP_Replies_Widget', array(
+                    'title' => __( 'Recent Replies', 'anp-bp-custom' ),
+                    'parent_forum' => $forum_id
+                ) ); ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <?php if( is_active_sidebar( 'anp-buddypress-home' ) ) : ?>
