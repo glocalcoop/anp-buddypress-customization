@@ -48,6 +48,7 @@ $blog_id = ( array_key_exists( 'groupblog_blog_id', $group_meta ) ) ? (int) $gro
         <?php if ( bp_is_active( 'blogs' ) ) : ?>
             <div class="buddypress-module blogs">
                 <h2 class="widgettitle"><?php _e( 'Recent Posts', 'anp-bp-custom' ); ?></h2>
+                <?php bp_group_home_recent_posts( $group_id, 3 ); ?>
             </div>
         <?php endif; ?>
         <?php if ( bp_is_active( 'bpeo' ) ) : ?>
