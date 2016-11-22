@@ -42,18 +42,17 @@
 .buddypress-module {
   border-bottom: 1px solid #e0e0e0;
   line-height: 1.5; }
-  .buddypress-module ul {
-    margin: 0;
-    padding: 0;
-    list-style: none; }
-    .buddypress-module ul li {
-      margin-bottom: 1em; }
-    .buddypress-module ul p {
-      margin-bottom: 0; }
+  .buddypress-module ul,
   .buddypress-module #recent-members ul {
     margin: 0;
     padding: 0;
     list-style: none; }
+    .buddypress-module ul li,
+    .buddypress-module #recent-members ul li {
+      margin-bottom: 1em; }
+    .buddypress-module ul p,
+    .buddypress-module #recent-members ul p {
+      margin-bottom: 0; }
   .buddypress-module.content-entry ul {
     margin: 0;
     padding: 0;

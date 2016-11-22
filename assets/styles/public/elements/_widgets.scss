@@ -9,7 +9,8 @@
   border-bottom: 1px solid $color__gray-light;
   line-height: 1.5;
 
-  ul {
+  ul,
+  #recent-members ul {
     @include no-bullets;
 
     li{
@@ -20,12 +21,6 @@
       margin-bottom: 0;
     }
 
-  }
-
-  #recent-members {
-    ul {
-      @include no-bullets;
-    }
   }
 
   &.content-entry {
